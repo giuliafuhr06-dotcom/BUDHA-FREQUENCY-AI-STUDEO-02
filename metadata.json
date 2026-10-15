@@ -1,0 +1,6 @@
+{
+  "name": "Budah Frequency",
+  "description": "Harmonic Solfeggio soundscapes engineered for serene focus, mindful relaxation, and inner balance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

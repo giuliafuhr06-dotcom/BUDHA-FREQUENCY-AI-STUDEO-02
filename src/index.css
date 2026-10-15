@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #070913;
+    color: #f3f4f6;
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Cosmic Aurora Glow keyframes */
+@keyframes aurora-float {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.35;
+  }
+  33% {
+    transform: translate(30px, -40px) scale(1.15);
+    opacity: 0.55;
+  }
+  66% {
+    transform: translate(-25px, 25px) scale(0.9);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.35;
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4), 0 0 40px rgba(217, 119, 6, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(245, 158, 11, 0.65), 0 0 60px rgba(217, 119, 6, 0.35);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes ring-expand {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+}
+
+.animate-aurora-slow {
+  animation: aurora-float 18s ease-in-out infinite;
+}
+
+.animate-aurora-delayed {
+  animation: aurora-float 24s ease-in-out infinite reverse;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 3s ease-in-out infinite;
+}
+
+.animate-ring {
+  animation: ring-expand 6s ease-in-out infinite;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(245, 158, 11, 0.3);
+  transform: translateY(-2px);
+}
